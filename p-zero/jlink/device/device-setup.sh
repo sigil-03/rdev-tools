@@ -1,11 +1,12 @@
 #!/bin/bash
-PYTHON_VENV_DIR="${HOME}/env/remote"
+PYTHON_VENV_DIR="/env/remote"
 
 # install pip
 sudo apt-get install -y python3-pip
 
 # create venv if it does not exist
 if [ ! -d ${PYTHON_VENV_DIR} ]; then
+    mkdir -p ${PYTHON_VENV_DIR}
     echo "setting up python VENV"
     python3 -m venv ${PYTHON_VENV_DIR}
 fi
